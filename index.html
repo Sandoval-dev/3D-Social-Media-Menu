@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        background-color: rgb(245, 244, 244);
+    }
+
+    ul{
+        position: relative;
+        transform: skewY(-15deg);
+    }
+
+    ul li {
+        background-color: rgb(131, 124, 124);
+        position: relative;
+        list-style-type: none;
+        width: 120px;
+        height: 50px;
+        padding: 20px;
+        transition: 0.5s;
+        z-index: var(--i);
+        display: grid;
+        place-content: center;
+        margin: 5px;
+    }
+
+    ul li:hover{
+        transform: translateX(-50px);
+        background-color: var(--var);
+    }
+
+    ul li::before{
+        content: ' ';
+        background-color: rgb(77, 73, 73);
+        position:absolute;
+        top: 0;
+        transform-origin: right;
+        transform: skewY(45deg);
+        left: -30px;
+        height: 50px;
+        width: 30px;
+    }
+
+    ul li::after{
+        content: ' ';
+        background-color: rgb(95, 93, 93);
+        position:absolute;
+        top: -30px;
+        transform-origin: bottom;
+        transform: skewX(45deg);
+        height: 30px;
+        width: 100%;
+        left: 0;
+    }
+
+    ul li:hover::before{
+        background-color: var(--var);
+    }
+
+    ul li:hover::after{
+        background-color: var(--var);
+    }
+
+    ul li:nth-child(3){
+        box-shadow: -10px 90px 60px 1px black;
+    }
+
+    ul li a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+
+</style>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    
+    <ul>
+        <li style="--i: 3; --var: rgb(225,0,0);">
+        <a href="#"><i class="fa-brands fa-youtube"></i>
+        </li></a>
+        <li style="--i: 2; --var: rgb(50,89,152);">
+        <a href="#"><i style="--logo: 2;" class="fa-brands fa-facebook"></i>
+        </a></li>
+        <li id="last" style="--i: 1; --var: rgb(8,160,233);">
+         <a href="#"><i style="--logo: 3;" class="fa-brands fa-twitter"></i>
+         </a></li>
+        
+    </ul>
+</body>
+</html>
